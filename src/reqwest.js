@@ -26,7 +26,6 @@
     , contentType = 'Content-Type'
     , requestedWith = 'X-Requested-With'
     , uniqid = 0
-    , callbackPrefix = 'reqwest_' + (+new Date())
     , xmlHttpRequest = 'XMLHttpRequest'
     , xDomainRequest = 'XDomainRequest'
     , noop = function () {}
@@ -597,7 +596,7 @@
   }
 
   reqwest.getcallbackPrefix = function () {
-    return callbackPrefix
+    return 'reqwest_' + (+new Date()) + (Math.random() + '').slice(-6)
   }
 
   // jQuery and Zepto compatibility, differences can be remapped here so you can call
