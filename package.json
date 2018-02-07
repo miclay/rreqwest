@@ -42,7 +42,5 @@
     "reqwest.js",
     "reqwest.min.js"
   ],
-  "dependencies": {
-    "reqwest": "^2.0.5"
-  }
+  "dependencies": {}
 }

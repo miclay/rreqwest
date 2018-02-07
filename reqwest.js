@@ -314,9 +314,11 @@
       var type = o['type'] || resp && setType(resp.getResponseHeader('Content-Type')) // resp can be undefined in IE
       resp = (type !== 'jsonp') ? self.request : resp
       // use global data filter on response text
-      var filteredResponse = globalSetupOptions.dataFilter(resp.responseText, type)
-        , r = filteredResponse
+      var filteredResponse
+          , r
       try {
+        filteredResponse = globalSetupOptions.dataFilter(resp.responseText, type)
+        r = filteredResponse
         resp.responseText = r
       } catch (e) {
         // can't assign this in IE<=8, just ignore
